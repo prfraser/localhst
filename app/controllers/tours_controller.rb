@@ -11,6 +11,7 @@ class ToursController < ApplicationController
   # GET /tours/1
   # GET /tours/1.json
   def show
+    @review = @tour.reviews.build
   end
 
   # GET /tours/new
@@ -26,6 +27,7 @@ class ToursController < ApplicationController
   # POST /tours.json
   def create
     @tour = Tour.new(tour_params)
+    @tour.user_id = current_user.id
 
     respond_to do |format|
       if @tour.save
