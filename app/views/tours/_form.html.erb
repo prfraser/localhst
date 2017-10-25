@@ -1,4 +1,4 @@
-<%= form_with(model: tour, local: true) do |form| %>
+<%= form_with(model: tour, local: true, :class => "form-horizontal") do |form| %>
   <% if tour.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(tour.errors.count, "error") %> prohibited this tour from being saved:</h2>
@@ -11,17 +11,23 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :tour_title %>
+  <div class="form-group">
+    <%= form.label :title, :class => "col-sm-1 control-label" %>
+    <div class="col-sm-6">
+      <%= form.text_field :title, id: :tour_title, :class => "form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body, id: :tour_body %>
+  <div class="form-group">
+    <%= form.label :body, :class => "col-sm-1 control-label"  %>
+    <div class="col-sm-6">
+      <%= form.text_area :body, id: :tour_body, rows: 3, :class => "form-control" %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group">
+    <div class="col-sm-6 col-sm-offset-1">
+      <%= form.submit :class => "btn btn-primary" %>
+    </div>
   </div>
 <% end %>
