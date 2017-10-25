@@ -1,6 +1,8 @@
 class ReviewsController < ApplicationController
   before_action :set_reviews
   before_action :set_review, only: [:destroy]
+  before_action :check_user, only: [:destroy]
+
 
   # GET tours/1/reviews/new
   def new
@@ -38,5 +40,11 @@ class ReviewsController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def review_params
       params.require(:review).permit(:content)
+    end
+
+    def check_user
+      if current_user!= @review.user
+        redirect_to root_url, alert: "Sorry. This review belongs to someone else."
+      end
     end
 end

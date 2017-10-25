@@ -11,7 +11,9 @@
 
 	<%= link_to 'Edit', edit_tour_path(@tour), :class => "btn btn-warning" %> |
 	<%= link_to 'Back', tours_path, :class => "btn btn-primary"  %>
-
+        <% if current_user == @tour.user %>
+          | <%= link_to 'Destroy', @tour, :class => "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
 
 	<%= render 'reviews/form' %>
 
