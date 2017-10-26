@@ -21,10 +21,6 @@
             <td><span class="label label-info"><%= link_to t, tag_path(t) %> </span></td>
           <% end %>
         <td><%= link_to 'Show', tour, :class => "btn btn-primary btn-xs" %></td>
-          <% if current_user == tour.user %>
-            <td><%= link_to 'Edit', edit_tour_path(tour), :class => "btn btn-warning btn-xs" %></td>
-            <td><%= link_to 'Destroy', tour, :class => "btn btn-danger btn-xs", method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <% end %>
       </tr>
     <% end %>
   </tbody>
