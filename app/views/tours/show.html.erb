@@ -14,6 +14,9 @@
         <% if current_user == @tour.user %>
           | <%= link_to 'Destroy', @tour, :class => "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
         <% end %>
+<br>
+	Details  : <%= rating_for @tour, 'details', star: 10, enable_half: true, half_show: true %>
+	Coolness  : <%= rating_for @tour, 'coolness', star: 10, enable_half: true, half_show: true %>
 
 	<%= render 'reviews/form' %>
 
