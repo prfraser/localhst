@@ -1,3 +1,27 @@
 // Place all the styles related to the Tours controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.show-title {
+	text-align: center
+}
+
+.title-img-wrapper {
+	height: 300px;
+	width: 99.5%;
+	overflow: hidden;
+	position: relative;
+}
+
+.title-img {
+	position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%)
+}
+
+.profile-info-image {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}

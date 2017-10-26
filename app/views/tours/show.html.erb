@@ -1,44 +1,67 @@
-<div class="col-sm-offset-1">
-	<p>
-	  <strong>Title:</strong>
+<div class="show-title">
+	<h1>
 	  <%= @tour.title %>
-	</p>
-
-	<p>
-	  <strong>Body:</strong>
-	  <%= @tour.body %>
-	</p>
-	<p>
-		<strong>Tags:</strong> 
-
-		<% @tour.tag_list.each do |tag| %>
+	</h1>
+	<% @tour.tag_list.each do |tag| %>
 		<span class="label label-info"><%= link_to tag, tag_path(tag) %></span>
-		<% end %>
-	</p>
+	<% end %>
+</div>
 
-	<%= link_to 'Edit', edit_tour_path(@tour), :class => "btn btn-warning" %> |
-	<%= link_to 'Back', tours_path, :class => "btn btn-primary"  %>
-        <% if current_user == @tour.user %>
-          | <%= link_to 'Destroy', @tour, :class => "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
-        <% end %>
+<hr>
+	<div class="title-img-wrapper">
+		  <%= image_tag @tour.title_img.url, :class => "title-img"  %>
+	</div>
+<hr>
+
+<span class="label label-primary"><%= @tour.city %></span>
 <br>
-	Details  : <%= rating_for @tour, 'details', star: 10, enable_half: true, half_show: true %>
-	Coolness  : <%= rating_for @tour, 'coolness', star: 10, enable_half: true, half_show: true %>
+<br>
+<p>
+	<strong>Body:</strong>
+	<%= @tour.body %>
+</p>
 
-	<%= render 'reviews/form' %>
+<%= link_to 'Back', tours_path, :class => "btn btn-primary"  %>
+<% if current_user == @tour.user %>
+  | <%= link_to 'Destroy', @tour, :class => "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %> | <%= link_to 'Edit', edit_tour_path(@tour), :class => "btn btn-warning" %>
+<% end %>
 
-	<div class="list-group col-sm-8" >
-		<div class="list-group-item active"><h3>Reviews:</h3></div>
-			<% @tour.reviews.each do |review| %>
-			    <a class="list-group-item">
-			    	<%= review.content %> | <%= review.user.try(:email)%>
-			    </a>
-		    	<% if current_user == review.user %>
-			    	<div class="panel-footer">
-			    		<%= link_to 'Delete', tour_review_path(review.tour, review), :class => "btn btn-danger btn-xs inline", method: :delete, data: { confirm: 'Are you sure?' } %>
-		    		</div>
-			    <% end %>	
-			<% end %>
+<hr>
+
+<div class="row">
+	<div class="col-sm-6">
+		<div class="profile-info">
+			<p>Created On: <%= @tour.created_at.strftime("%b %d, %Y") %></p>
+			<div class="profile-info-image">
+				<div class="circle-wrapper">
+					<%= image_tag @tour.user.avatar.url(:thumb), :class => "circle" %>
+				</div>
+				<p> <%= @tour.user.first_name %> <%= @tour.user.last_name %> </p>
+				<p> <%= @tour.user.tours.count %> tours </p>
+			</div>
 		</div>
+	</div>
+	<div class="col-sm-6">
+		<p> Details: <%= rating_for @tour, 'details', star: 10, enable_half: true, half_show: true %> </p>
+		<p> Coolness: <%= rating_for @tour, 'coolness', star: 10, enable_half: true, half_show: true %> </p>
+	</div>
+</div>
+
+<hr>
+
+<%= render 'reviews/form' %>
+
+<div class="list-group col-sm-10" >
+	<div class="list-group-item active"><h3>Reviews:</h3></div>
+		<% @tour.reviews.each do |review| %>
+		    <a class="list-group-item">
+		    	<%= review.content %>  <strong><%= review.user.try(:email)%></strong> 
+		    </a>
+	    	<% if user_signed_in? && current_user == review.user %>
+		    	<div class="panel-footer">
+		    		<%= link_to 'Delete', tour_review_path(review.tour, review), :class => "btn btn-danger btn-xs inline", method: :delete, data: { confirm: 'Are you sure?' } %>
+	    		</div>
+		    <% end %>	
+		<% end %>
 	</div>
 </div>
