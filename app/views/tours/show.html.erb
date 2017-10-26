@@ -8,6 +8,13 @@
 	  <strong>Body:</strong>
 	  <%= @tour.body %>
 	</p>
+	<p>
+		<strong>Tags:</strong> 
+
+		<% @tour.tag_list.each do |tag| %>
+		<span class="label label-info"><%= link_to tag, tag_path(tag) %></span>
+		<% end %>
+	</p>
 
 	<%= link_to 'Edit', edit_tour_path(@tour), :class => "btn btn-warning" %> |
 	<%= link_to 'Back', tours_path, :class => "btn btn-primary"  %>
