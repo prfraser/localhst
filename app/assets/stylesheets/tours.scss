@@ -25,3 +25,49 @@
 	align-items: center;
 	flex-direction: column;
 }
+
+// Tour Index Page
+
+.tour-panel-wrapper {
+	display: flex;
+	justify-content: row;
+}
+
+.tour-panel-wrapper-wrapper {
+	padding-left: 0px !important;
+	padding-right: 5px !important;
+}
+
+.tour-panel-inside-wrapper {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.tour-index-panel-tag-wrapper {
+	
+}
+
+.tour-panel-block-1 {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.tour-panel-block-2 {
+	padding-right: 0px !important;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+.tour-index-panel-heading {
+	margin: 5px;
+}
+
+// Tour Show Page
+.summary-right-side{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}

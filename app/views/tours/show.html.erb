@@ -5,21 +5,31 @@
 	<% @tour.tag_list.each do |tag| %>
 		<span class="label label-info"><%= link_to tag, tag_path(tag) %></span>
 	<% end %>
+	<br>
 </div>
 
 <hr>
-	<div class="title-img-wrapper">
-		  <%= image_tag @tour.title_img.url, :class => "title-img"  %>
+
+<div class="title-img-wrapper">
+  <%= image_tag @tour.title_img.url, :class => "title-img"  %>
+</div>
+
+<hr>
+<div class="row summary-wrapper">
+	<div class="col-sm-10">
+		<%= sanitize(@tour.summary).html_safe %>
 	</div>
+	<div class="col-sm-2 summary-right-side">
+		<p>Location: <%= @tour.city %></p>
+		<p>Est time: <%= @tour.est_time %> hours</p>
+	</div>
+</div>
 <hr>
 
-<span class="label label-primary"><%= @tour.city %></span>
-<br>
-<br>
-<p>
-	<strong>Body:</strong>
-	<%= @tour.body %>
-</p>
+<div class="tour-body">
+	<%= sanitize(@tour.body).html_safe %>
+	<p>Created On: <%= @tour.created_at.strftime("%b %d, %Y") %></p>
+</div>
 
 <%= link_to 'Back', tours_path, :class => "btn btn-primary"  %>
 <% if current_user == @tour.user %>
@@ -31,7 +41,7 @@
 <div class="row">
 	<div class="col-sm-6">
 		<div class="profile-info">
-			<p>Created On: <%= @tour.created_at.strftime("%b %d, %Y") %></p>
+			
 			<div class="profile-info-image">
 				<div class="circle-wrapper">
 					<%= image_tag @tour.user.avatar.url(:thumb), :class => "circle" %>
