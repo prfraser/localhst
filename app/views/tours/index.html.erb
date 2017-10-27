@@ -1,30 +1,38 @@
-<h1>Tours</h1>
-
-<table class="table table-striped table-hover">
-  <thead>
-    <tr class="info">
-      <th>Title</th>
-      <th>Body</th>
-      <th>Tags</th>
-      <th></th>
-      <th>Actions</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @tours.each do |tour| %>
-      <tr>
-        <td><%= tour.title %></td>
-        <td><%= tour.body %></td>
-          <% tour.tag_list.each do |t| %> 
-            <td><span class="label label-info"><%= link_to t, tag_path(t) %> </span></td>
-          <% end %>
-        <td><%= link_to 'Show', tour, :class => "btn btn-primary btn-xs" %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<div class="container">
+  <h1>Tours</h1>
+  <br>
+  <% @tours.each do |tour| %>
+      <div class="row">
+        <div class="panel panel-default col-sm-12 tour-panel-wrapper-wrapper">
+          <div class="tour-panel-wrapper">
+            <%= link_to tour_path(tour) do %>
+              <div class="tour-panel-image-wrapper">
+                <%= image_tag tour.title_img.url(:medium) %> 
+              </div>
+            <% end %>
+            <div class="tour-panel-inside-wrapper">
+              <div class="tour-panel-block-1 col-sm-8">
+                <p>Location: <%= tour.city %></p>
+                <h2 class="tour-index-panel-heading"><%= tour.title %></h2>
+                <p><%= sanitize(tour.summary).html_safe %></p>
+                <p>Est time: <%= tour.est_time %> hours</p>
+              </div>
+              <div class="tour-panel-block-2 col-sm-4">
+                <div class="tour-index-panel-tag-wrapper">
+                  <% tour.tag_list.each do |tag| %>
+                    <span class="label label-primary tour-index-panel-tag"><%= link_to tag, tag_path(tag) %></span>
+                  <% end %>
+                </div>
+                <br>
+                Details: <%= rating_for tour, 'details', star: 10, enable_half: true, half_show: true %>
+                Coolness: <%= rating_for tour, 'coolness', star: 10, enable_half: true, half_show: true %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>
 <br>
-<%= link_to 'New Tour', new_tour_path, :class => "btn btn-primary" %>
+<br>
+

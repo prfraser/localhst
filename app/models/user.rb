@@ -3,8 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :tours
-  has_many :reviews
+  has_many :tours, dependent: :destroy
+  has_many :reviews, dependent: :destroy
   ratyrate_rater
 
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "70x60>" }, default_url: "/images/:style/missing.png"
