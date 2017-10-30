@@ -19,6 +19,8 @@
               </div>
               <div class="tour-panel-block-2 col-sm-4">
                 <div class="tour-index-panel-tag-wrapper">
+                  <p class="tour-index-panel-tag-title">Tags:</p>
+                  <br>
                   <% tour.tag_list.each do |tag| %>
                     <span class="label label-primary tour-index-panel-tag"><%= link_to tag, tag_path(tag) %></span>
                   <% end %>

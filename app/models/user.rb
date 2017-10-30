@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :tours, dependent: :destroy
   has_many :reviews, dependent: :destroy
+	validates :first_name, :last_name, presence: true
   ratyrate_rater
 
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "70x60>" }, default_url: "/images/:style/missing.png"

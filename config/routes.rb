@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :photos
   post '/rate' => 'rater#create', :as => 'rate'
   resources :tours do
     resources :reviews, only: [:create, :destroy]
