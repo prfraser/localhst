@@ -1,0 +1,10 @@
+---
+:User:
+  :avatar:
+  - :medium
+  - :thumb
+:Tour:
+  :title_img:
+  - :banner
+  - :medium
+  - :thumb
