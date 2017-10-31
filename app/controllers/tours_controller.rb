@@ -33,6 +33,7 @@ class ToursController < ApplicationController
   # POST /tours.json
   def create
     @tour = Tour.new(tour_params)
+    @tour.body = "Add body here..."
     @tour.user_id = current_user.id
 
     respond_to do |format|

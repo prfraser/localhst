@@ -10,7 +10,7 @@
 
 <hr>
 <div class="title-img-wrapper">
-  <%= image_tag @tour.title_img.url, :class => "title-img"  %>
+  <%= image_tag @tour.title_img.url(:banner), :class => "title-img"  %>
 </div>
 
 <hr>
@@ -26,15 +26,10 @@
 <hr>
 
 <div class="editable">
-	<%= @tour.body %>
+	<%= sanitize(@tour.body).html_safe %>
 </div>
-
+<button id="save" class="btn btn-info">Save</button>
 <hr>
-<script>
-  var editor = new MediumEditor('.editable', {
-    // options go here
-  });
-</script>
 
 <%= link_to 'Back', tours_path, :class => "btn btn-primary"  %>
 <% if current_user == @tour.user %>
