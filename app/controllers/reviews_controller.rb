@@ -3,7 +3,6 @@ class ReviewsController < ApplicationController
   before_action :set_review, only: [:destroy]
   before_action :check_user, only: [:destroy]
 
-
   # GET tours/1/reviews/new
   def new
     @review = @tour.reviews.build

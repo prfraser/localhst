@@ -25,12 +25,23 @@
 </div>
 <hr>
 
+<% if current_user == @tour.user %>
 <div class="editable">
 	<%= sanitize(@tour.body).html_safe %>
 </div>
 <button id="save" class="btn btn-info">Save</button>
-<hr>
+<% else %>
+	<%= sanitize(@tour.body).html_safe %>
+<% end %>
 
+<%= render 'markers/form' %>
+<% @tour.markers.each do |marker| %>
+<%= marker.name %>
+<br>
+<%= marker.address %>
+<% end %>
+
+<hr>
 <%= link_to 'Back', tours_path, :class => "btn btn-primary"  %>
 <% if current_user == @tour.user %>
   | <%= link_to 'Destroy', @tour, :class => "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %> | <%= link_to 'Edit', edit_tour_path(@tour), :class => "btn btn-warning" %>

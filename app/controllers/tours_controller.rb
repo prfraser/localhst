@@ -18,6 +18,7 @@ class ToursController < ApplicationController
   # GET /tours/1.json
   def show
     @review = @tour.reviews.build
+    @marker = @tour.markers.build
   end
 
   # GET /tours/new
