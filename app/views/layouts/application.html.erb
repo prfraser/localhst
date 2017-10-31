@@ -4,11 +4,13 @@
     <title>Localhst</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
   </head>
 
   <body>
     <%= render 'layouts/navbar' %>
-    <div class="wrapper">
+    <div class="col-sm-offset-1 col-sm-10 wrapper">
       <% flash.each do |key, value| %>
         <div class="<%= flash_class(key) %>">
               <%= value %>
@@ -17,5 +19,4 @@
       <%= yield %>
     </div>
   </body>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </html>

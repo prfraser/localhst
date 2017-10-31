@@ -10,7 +10,7 @@
 
 <hr>
 <div class="title-img-wrapper">
-  <%= image_tag @tour.title_img.url(:banner), :class => "title-img"  %>
+  <%= image_tag @tour.title_img.url, :class => "title-img"  %>
 </div>
 
 <hr>
@@ -25,10 +25,16 @@
 </div>
 <hr>
 
-<div class="tour-body">
-	<%= sanitize(@tour.body).html_safe %>
-	<p>Created On: <%= @tour.created_at.strftime("%b %d, %Y") %></p>
+<div class="editable">
+	<%= @tour.body %>
 </div>
+
+<hr>
+<script>
+  var editor = new MediumEditor('.editable', {
+    // options go here
+  });
+</script>
 
 <%= link_to 'Back', tours_path, :class => "btn btn-primary"  %>
 <% if current_user == @tour.user %>

@@ -81,3 +81,25 @@
 .error_explanation, li {
 	color: black;
 }
+
+.del {
+  background-image:url('http://cdn1.iconfinder.com/data/icons/fugue/bonus/icons-24/cross.png');
+}
+
+.hidden {
+  display:none;
+}
+
+.clone {
+  background-image:url('http://cdn1.iconfinder.com/data/icons/musthave/24/Copy.png');
+}
+
+.del, .clone {
+  z-index:999;
+  cursor:pointer;
+  background-position:left center;
+  background-repeat:no-repeat;
+  min-width:24px;
+  min-height:24px;
+  padding-left:26px;
+}

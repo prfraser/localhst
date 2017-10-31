@@ -10,7 +10,8 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require trix
+ *= require medium-editor/medium-editor
+ *= require medium-editor/themes/flat
  *= require_tree .
  */
 // Example using 'Cerulean' bootswatch
@@ -32,9 +33,6 @@
 
 // Whatever application styles you have go last
 
-.wrapper {
-  margin: 10px;
-}
 
 .circle {
   position: absolute;
@@ -64,3 +62,5 @@ a {
 li {
   color: white;
 }
+
+

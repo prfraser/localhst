@@ -16,8 +16,6 @@ gem "paperclip", "~> 5.0.0"
 gem 'nested_scaffold'
 gem 'ratyrate'
 gem 'acts-as-taggable-on', :git => 'https://github.com/mbleigh/acts-as-taggable-on'
-gem 'trix'
-gem 'shrine'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'

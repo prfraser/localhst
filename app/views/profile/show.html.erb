@@ -1,7 +1,10 @@
-<div class="container col-sm-12">
-  <h1>Tours</h1>
-  <br>
-  <% @tours.each do |tour| %>
+<%= image_tag current_user.avatar.url(:medium) %>
+<h1> <%= @user.email %> </h1>
+<h4> <%= @user.first_name %> <%= @user.last_name %> </h4>
+<h4><%= @user.tours.count %> tours</h4>
+<hr>
+<h4>Tours by <%= @user.first_name %> <%= @user.last_name %>:</h4>
+<% @tours.each do |tour| %>
       <div class="row col-sm-12">
         <div class="panel panel-default col-sm-12 tour-panel-wrapper-wrapper">
           <div class="tour-panel-wrapper">
@@ -25,7 +28,7 @@
                     <span class="label label-primary tour-index-panel-tag"><%= link_to tag, tag_path(tag) %></span>
                   <% end %>
                 </div>
-                <br> 
+                <br>
                 Details: <%= rating_for tour, 'details', star: 10, disabled: true, half_show: true %>
                 Coolness: <%= rating_for tour, 'coolness', star: 10, disabled: true, half_show: true %>
               </div>
@@ -34,7 +37,3 @@
         </div>
       </div>
   <% end %>
-</div>
-<br>
-<br>
-
