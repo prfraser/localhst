@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   post '/rate' => 'rater#create', :as => 'rate'
   resources :tours do
     resources :reviews, only: [:create, :destroy]
+    resources :markers, only: [:create, :destroy]
   end
   devise_for :users, :controllers => { registrations: 'registrations' }
   root 'pages#home'

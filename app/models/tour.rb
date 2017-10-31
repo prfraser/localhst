@@ -1,6 +1,7 @@
 class Tour < ApplicationRecord
-	validates :title, :city, :summary, :body, :est_time, presence: true
+	validates :title, :city, :summary, :est_time, presence: true
   has_many :reviews, dependent: :destroy 
+  has_many :markers, dependent: :destroy 
   belongs_to :user
 
   ratyrate_rateable "details", "coolness"

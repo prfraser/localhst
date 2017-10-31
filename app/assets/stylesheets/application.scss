@@ -33,7 +33,6 @@
 
 // Whatever application styles you have go last
 
-
 .circle {
   position: absolute;
   top:50%;
@@ -63,4 +62,11 @@ li {
   color: white;
 }
 
+.busy {
+  background-color: #2C3F50 !important;
+}
 
+.addy {
+  color: orange;
+  display: inline-block;
+}

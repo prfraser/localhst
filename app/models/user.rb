@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :tours, dependent: :destroy
   has_many :reviews, dependent: :destroy
+  has_many :markers, dependent: :destroy
 	validates :first_name, :last_name, presence: true
   ratyrate_rater
 
