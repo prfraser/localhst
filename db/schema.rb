@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171031095634) do
+ActiveRecord::Schema.define(version: 20171101002334) do
 
   create_table "average_caches", force: :cascade do |t|
     t.integer "rater_id"
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 20171031095634) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.integer "user_id"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["tour_id"], name: "index_markers_on_tour_id"
     t.index ["user_id"], name: "index_markers_on_user_id"
   end

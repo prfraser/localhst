@@ -1,7 +1,6 @@
 class MarkersController < ApplicationController
   before_action :set_markers
   before_action :set_marker, only: [:destroy]
-  before_action :check_user, only: [:destroy]
 
   # GET /markers/new
   def new
@@ -24,7 +23,6 @@ class MarkersController < ApplicationController
   # DELETE /markers/1.json
   def destroy
     @marker.destroy
-
     redirect_to(tour_path(@tour), notice: 'Marker was successfully deleted.')
   end
 
@@ -35,7 +33,7 @@ class MarkersController < ApplicationController
     end
 
     def set_marker
-      @marker = Marker.find(params[:id])
+      @marker = @tour.markers.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
@@ -43,10 +41,4 @@ class MarkersController < ApplicationController
       params.require(:marker).permit(:name, :address)
     end
 
-
-    def check_user
-      if current_user!= @review.user
-        redirect_to root_url, alert: "Sorry. This review belongs to someone else."
-      end
-    end
 end
