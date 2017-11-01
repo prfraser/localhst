@@ -48,6 +48,7 @@
   overflow: hidden;
   border-radius:50%;
   position: relative;
+  background-color: #2C3F50;
 }
 
 
@@ -68,6 +69,11 @@ li {
 // Tour update/save button
 .busy {
   background-color: #2C3F50 !important;
+}
+
+// Tour Form
+#error_explanation > ul > li {
+  color: black;
 }
 
 // Google maps

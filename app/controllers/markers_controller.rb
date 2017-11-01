@@ -15,7 +15,7 @@ class MarkersController < ApplicationController
     if @marker.save
       redirect_to(tour_path(@tour), notice: 'Marker was successfully created.')
     else
-      render action: 'new'
+      redirect_to(tour_path(@tour), alert: 'Error occured in creating marker. Name and address cannot be blank.')
     end
   end
 

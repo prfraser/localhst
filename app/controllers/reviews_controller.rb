@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to(tour_path(@tour), notice: 'Review was successfully created.')
     else
-      render action: 'new'
+      redirect_to(tour_path(@tour), alert: 'Error occured in creating review. Review cannot be blank.')
     end
   end
 
