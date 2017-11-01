@@ -20,7 +20,7 @@
 		<%= sanitize(@tour.summary).html_safe %>
 	</div>
 	<div class="col-sm-2 summary-right-side">
-		<p>Location: <%= @tour.city %></p>
+		<p>Location: <%= @tour.city %> </p>
 		<p>Est time: <%= @tour.est_time %> hours</p>
 	</div>
 </div>
@@ -64,7 +64,7 @@
   var map;
   function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: -27.469703, lng: 153.025190},
+      center: city_location,
       zoom: 12
     });
   
@@ -90,6 +90,11 @@
 
     // Add a marker clusterer to manage the markers.
     var markerCluster = new MarkerClusterer(map, markers, {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+  }
+
+  var city_location = {
+  	lat: <%= @tour.latitude %>,
+  	lng: <%= @tour.longitude %>
   }
 
   var locations = [
@@ -119,7 +124,7 @@
 				<div class="circle-wrapper">
 					<%= image_tag @tour.user.avatar.url(:thumb), :class => "circle" %>
 				</div>
-				<p> <%= @tour.user.first_name %> <%= @tour.user.last_name %> </p>
+				<p><%= link_to "#{@tour.user.first_name} #{@tour.user.last_name}", profile_path(@tour.user)%></p>
 				<p> <%= @tour.user.tours.count %> tours </p>
 			</div>
 		</div>
