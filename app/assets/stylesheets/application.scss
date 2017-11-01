@@ -33,6 +33,7 @@
 
 // Whatever application styles you have go last
 
+// User Avatar
 .circle {
   position: absolute;
   top:50%;
@@ -49,6 +50,8 @@
   position: relative;
 }
 
+
+// Wysiwyg fix
 a:visited {
   color: white;
 }
@@ -62,11 +65,17 @@ li {
   color: white;
 }
 
+// Tour update/save button
 .busy {
   background-color: #2C3F50 !important;
 }
 
-.addy {
-  color: orange;
-  display: inline-block;
+// Google maps
+#map {
+  height: 300px;
+  width: 100%;
+}
+
+.map-p {
+  color: black;
 }

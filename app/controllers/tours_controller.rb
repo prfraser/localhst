@@ -17,8 +17,10 @@ class ToursController < ApplicationController
   # GET /tours/1
   # GET /tours/1.json
   def show
-    @review = @tour.reviews.build
-    @marker = @tour.markers.build
+    @review = Review.new
+    @review.tour = @tour
+    @marker = Marker.new
+    @marker.tour = @tour
   end
 
   # GET /tours/new

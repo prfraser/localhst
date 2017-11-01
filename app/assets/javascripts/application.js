@@ -63,7 +63,6 @@ function save() {
   });
 }
 
-
 $(document).on('turbolinks:load', function() {	
 	var editor = new MediumEditor('.editable', {
     toolbar: {
@@ -88,4 +87,6 @@ $(document).on('turbolinks:load', function() {
           }
         });
   $("#save").on('click', save);
+
 })
+
