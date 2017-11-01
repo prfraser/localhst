@@ -12,10 +12,13 @@
 
 ActiveRecord::Schema.define(version: 20171101043843) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "average_caches", force: :cascade do |t|
-    t.integer "rater_id"
+    t.bigint "rater_id"
     t.string "rateable_type"
-    t.integer "rateable_id"
+    t.bigint "rateable_id"
     t.float "avg", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -25,11 +28,11 @@ ActiveRecord::Schema.define(version: 20171101043843) do
 
   create_table "markers", force: :cascade do |t|
     t.string "address"
-    t.integer "tour_id"
+    t.bigint "tour_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.float "latitude"
     t.float "longitude"
     t.index ["tour_id"], name: "index_markers_on_tour_id"
@@ -38,23 +41,17 @@ ActiveRecord::Schema.define(version: 20171101043843) do
 
   create_table "overall_averages", force: :cascade do |t|
     t.string "rateable_type"
-    t.integer "rateable_id"
+    t.bigint "rateable_id"
     t.float "overall_avg", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["rateable_type", "rateable_id"], name: "index_overall_averages_on_rateable_type_and_rateable_id"
   end
 
-  create_table "photos", force: :cascade do |t|
-    t.text "image_data"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "rates", force: :cascade do |t|
-    t.integer "rater_id"
+    t.bigint "rater_id"
     t.string "rateable_type"
-    t.integer "rateable_id"
+    t.bigint "rateable_id"
     t.float "stars", null: false
     t.string "dimension"
     t.datetime "created_at", null: false
@@ -66,7 +63,7 @@ ActiveRecord::Schema.define(version: 20171101043843) do
 
   create_table "rating_caches", force: :cascade do |t|
     t.string "cacheable_type"
-    t.integer "cacheable_id"
+    t.bigint "cacheable_id"
     t.float "avg", null: false
     t.integer "qty", null: false
     t.string "dimension"
@@ -77,8 +74,8 @@ ActiveRecord::Schema.define(version: 20171101043843) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.integer "tour_id"
-    t.integer "user_id"
+    t.bigint "tour_id"
+    t.bigint "user_id"
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -86,7 +83,7 @@ ActiveRecord::Schema.define(version: 20171101043843) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
-  create_table "taggings", force: :cascade do |t|
+  create_table "taggings", id: :serial, force: :cascade do |t|
     t.integer "tag_id"
     t.string "taggable_type"
     t.integer "taggable_id"
@@ -105,7 +102,7 @@ ActiveRecord::Schema.define(version: 20171101043843) do
     t.index ["tagger_id"], name: "index_taggings_on_tagger_id"
   end
 
-  create_table "tags", force: :cascade do |t|
+  create_table "tags", id: :serial, force: :cascade do |t|
     t.string "name"
     t.integer "taggings_count", default: 0
     t.index ["name"], name: "index_tags_on_name", unique: true
@@ -116,7 +113,7 @@ ActiveRecord::Schema.define(version: 20171101043843) do
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
+    t.bigint "user_id"
     t.string "title_img_file_name"
     t.string "title_img_content_type"
     t.integer "title_img_file_size"
@@ -152,4 +149,9 @@ ActiveRecord::Schema.define(version: 20171101043843) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "markers", "tours"
+  add_foreign_key "markers", "users"
+  add_foreign_key "reviews", "tours"
+  add_foreign_key "reviews", "users"
+  add_foreign_key "tours", "users"
 end
