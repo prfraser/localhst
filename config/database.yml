@@ -14,6 +14,8 @@ default: &default
 development:
   <<: *default
   database: local_hst_development
+  username: postgres
+  password: <%= ENV.fetch("POSTGRES_PASSWORD") %>
   port: 5433
 
 # Warning: The database defined as "test" will be erased and
