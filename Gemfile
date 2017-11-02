@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'medium-editor-rails'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'geocoder'
 gem 'devise'
@@ -12,7 +13,7 @@ gem 'bootswatch-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'devise-bootstrap-views'
 gem 'jquery-rails'
-gem 'medium-editor-rails'
+
 gem "paperclip", "~> 5.0.0"
 gem 'nested_scaffold'
 gem 'ratyrate'

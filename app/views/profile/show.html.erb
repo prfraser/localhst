@@ -2,6 +2,11 @@
 <h1> <%= @user.email %> </h1>
 <h4> <%= @user.first_name %> <%= @user.last_name %> </h4>
 <h4><%= @user.tours.count %> tours</h4>
+<% if current_user.id != @user.id %>
+    <%= link_to "Message #{@user.first_name} #{@user.last_name}", conversations_path(sender_id: current_user.id, recipient_id: @user.id), :class => "btn btn-info btn-sm", method: 'post'%>
+  <% else %>
+    <%= link_to "Your Mailbox", conversations_path, :class => "btn btn-info" %>
+<% end %>
 <hr>
 <h4>Tours by <%= @user.first_name %> <%= @user.last_name %>:</h4>
 <% @tours.each do |tour| %>
