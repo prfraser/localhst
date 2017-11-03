@@ -4,6 +4,10 @@ class MessagesController < ApplicationController
   end
 
   def index
+    unless current_user.id == @conversation.sender_id || current_user.id == @conversation.recipient_id
+      redirect_to root_path
+    end
+
     @messages = @conversation.messages
     if @messages.length > 10
       @over_ten = true
@@ -14,10 +18,10 @@ class MessagesController < ApplicationController
       @messages = @conversation.messages
     end
     if @messages.last
-      if @messages.last.user_id != current_user.id
-        @messages.last.read = true;
-      end
+    if @messages.last.user_id != current_user.id
+      @messages.last.read = true;
     end
+  end
 
     @message = @conversation.messages.new
   end
