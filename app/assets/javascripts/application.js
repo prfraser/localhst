@@ -19,7 +19,6 @@
 //= require turbolinks
 //= require_tree .
 
-
 // $( document ).on('turbolinks:load', function() {
 //   var editor = new MediumEditor('.editable');
 //   $("#save").on('click', save);

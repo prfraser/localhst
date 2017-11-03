@@ -40,7 +40,7 @@
   <div class="form-group">
     <%= form.label :tag_list, 'Tags (separated by commas)', :class => "col-sm-1 control-label" %><br/>
     <div class="col-sm-8">
-      <%= form.text_field :tag_list, :class => "form-control" %>
+      <%= form.text_field(:tag_list, value: @tour.tag_list.join(","), :class => "form-control" ) %>
     </div>
   </div>
 
