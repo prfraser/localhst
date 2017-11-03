@@ -14,5 +14,10 @@ module Localhst
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+
+  # Fixes for active admin assets
+  Bundler.require(:default, :assets, Rails.env)
+  config.assets.initialize_on_precompile = false
+  config.assets.precompile += %w( active_admin.js active_admin.scss )
   end
 end
