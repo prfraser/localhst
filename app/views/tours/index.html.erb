@@ -1,38 +1,71 @@
 <div class="container col-sm-12">
-  <h1>Tours</h1>
-  <br>
-  <% @tours.each do |tour| %>
-      <div class="row col-sm-12">
-        <div class="panel panel-default col-sm-12 tour-panel-wrapper-wrapper">
-          <div class="tour-panel-wrapper">
-            <%= link_to tour_path(tour) do %>
-              <div class="tour-panel-image-wrapper">
-                <%= image_tag tour.title_img.url(:medium) %> 
-              </div>
-            <% end %>
-            <div class="tour-panel-inside-wrapper">
-              <div class="tour-panel-block-1 col-sm-8">
-                <p>Location: <%= tour.city %></p>
-                <h2 class="tour-index-panel-heading"><%= tour.title %></h2>
-                <p><%= sanitize(tour.summary).html_safe %></p>
-                <p>Est time: <%= tour.est_time %> hours</p>
-              </div>
-              <div class="tour-panel-block-2 col-sm-4">
-                <div class="tour-index-panel-tag-wrapper">
-                  <p class="tour-index-panel-tag-title">Tags:</p>
-                  <br>
-                  <% tour.tag_list.each do |tag| %>
-                    <span class="label label-primary tour-index-panel-tag"><%= link_to tag, tag_path(tag) %></span>
-                  <% end %>
+  <h1>Find a Tour</h1>
+
+  <hr>
+
+  <div class="row tag-row">
+    <strong class="lead">Popular tags:</strong>
+    <span class="label label-info tour-index-panel-tag"><%= link_to "All Tours", tours_path %></span>
+    <% ActsAsTaggableOn::Tag.most_used(10).each do |tag| %>
+      <span class="label label-primary tour-index-panel-tag"><%= link_to tag, tag_path(tag.name) %></span>
+    <% end %>
+  </div>
+  
+  <hr> 
+  
+  <div class="row">
+    <div class="form-group">
+      <div class="col-sm-7">
+        <%= form_tag(tours_path, method: :get, :class => "form-horizontal") do %>
+        <%= text_field_tag :location, params[:location], :class => "form-control", placeholder: "Search a location" %>
+      </div>
+      <div class="form-group">
+        <%= submit_tag 'Search', name: nil, :class => "btn btn-info" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+
+  <% if @tours.present? %>
+    <% @tours.each do |tour| %>
+        <div class="row col-sm-12">
+          <div class="panel panel-default col-sm-12 tour-panel-wrapper-wrapper">
+            <div class="tour-panel-wrapper">
+              <%= link_to tour_path(tour) do %>
+                <div class="tour-panel-image-wrapper">
+                  <%= image_tag tour.title_img.url(:medium) %> 
                 </div>
-                <br> 
-                Details: <%= rating_for tour, 'details', star_path: '/images/ratyrate', star: 10, disabled: true, half_show: true %>
-                Coolness: <%= rating_for tour, 'coolness', star_path: '/images/ratyrate', star: 10, disabled: true, half_show: true %>
+              <% end %>
+              <div class="tour-panel-inside-wrapper">
+                <div class="tour-panel-block-1 col-sm-8">
+                  <p>Location: <%= tour.city %></p>
+                  <h2 class="tour-index-panel-heading"><%= tour.title %></h2>
+                  <p><%= sanitize(tour.summary).html_safe %></p>
+                  <p>Est time: <%= tour.est_time %> hours</p>
+                </div>
+                <div class="tour-panel-block-2 col-sm-4">
+                  <div class="tour-index-panel-tag-wrapper">
+                    <p class="tour-index-panel-tag-title">Tags:</p>
+                    <br>
+                    <% tour.tag_list.each do |tag| %>
+                      <span class="label label-primary tour-index-panel-tag"><%= link_to tag, tag_path(tag) %></span>
+                    <% end %>
+                  </div>
+                  <br> 
+                  Details: <%= rating_for tour, 'details', star_path: '/images/ratyrate', star: 5, disabled: true, half_show: true %>
+                  Coolness: <%= rating_for tour, 'coolness', star_path: '/images/ratyrate', star: 5, disabled: true, half_show: true %>
+                </div>
               </div>
             </div>
           </div>
         </div>
+    <% end %>
+  <% else %>
+    <div class="row">
+      <div class="well">
+        <p class="lead">Sorry, no tours found..</p>
       </div>
+    </div>
   <% end %>
 </div>
 <br>

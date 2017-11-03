@@ -13,7 +13,7 @@
               <% else %>
                 <% recipient = User.find(conversation.sender_id) %>
               <% end %>
-              Your chat with: <%= link_to "#{recipient.first_name} #{recipient.last_name}", conversation_messages_path(conversation), :class => "btn btn-info btn-sm"%>
+                Your chat with: <%= link_to "#{recipient.first_name} #{recipient.last_name}", conversation_messages_path(conversation), :class => "btn btn-info btn-sm"%>
               <hr>
             <% end %>
           <% end %>
