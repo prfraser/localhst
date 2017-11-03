@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   resources :photos
   post '/rate' => 'rater#create', :as => 'rate'
   resources :tours do
