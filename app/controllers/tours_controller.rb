@@ -3,12 +3,13 @@ class ToursController < ApplicationController
   before_action :set_tour, only: [:show, :edit, :update, :destroy]
   before_action :check_user, only: [:edit, :update, :destroy]
 
-
   # GET /tours
   # GET /tours.json
   def index
     if params[:tag]
       @tours = Tour.tagged_with(params[:tag])
+    elsif params[:location]
+      @tours = Tour.where({city: params[:location]})
     else
       @tours = Tour.all
     end
@@ -82,7 +83,7 @@ class ToursController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tour_params
-      params.require(:tour).permit(:title, :body, :tag_list, :title_img, :city, :summary, :est_time)
+      params.require(:tour).permit(:title, :body, :tag_list, :title_img, :city, :summary, :est_time, :location)
     end
 
     def check_user
