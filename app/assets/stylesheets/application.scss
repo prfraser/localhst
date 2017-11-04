@@ -33,6 +33,19 @@
 
 // Whatever application styles you have go last
 
+.nav-image-anchor {
+  padding: 0px; /* firefox bug fix */
+}
+.nav-image {
+  height: 100%;
+  width: auto;
+}
+
+.centerimg {
+  height: 200px;
+  width: auto;
+}
+
 // User Avatar
 .circle {
   position: absolute;
@@ -42,7 +55,7 @@
 }
 
 .circle-wrapper {
-	border: 1px solid white;
+	border: 1px solid orange;
 	width:40px;
   height:40px;
   overflow: hidden;

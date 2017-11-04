@@ -1,4 +1,4 @@
-<%= image_tag current_user.avatar.url(:medium) %>
+<%= image_tag @user.avatar.url(:medium) %>
 <h1> <%= @user.email %> </h1>
 <h4> <%= @user.first_name %> <%= @user.last_name %> </h4>
 <h4><%= @user.tours.count %> tours</h4>
