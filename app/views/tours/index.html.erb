@@ -7,7 +7,7 @@
     <strong class="lead">Popular tags:</strong>
     <span class="label label-info tour-index-panel-tag"><%= link_to "All Tours", tours_path %></span>
     <% ActsAsTaggableOn::Tag.most_used(10).each do |tag| %>
-      <span class="label label-primary tour-index-panel-tag"><%= link_to tag, tag_path(tag.name) %></span>
+      <span class="label label-warning tour-index-panel-tag fontfix"><%= link_to tag, tag_path(tag.name) %></span>
     <% end %>
   </div>
   
