@@ -6,6 +6,8 @@ git_source(:github) do |repo_name|
 end
 
 gem 'activeadmin'
+gem 'httparty'
+gem 'stripe'
 gem 'medium-editor-rails'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'geocoder'
