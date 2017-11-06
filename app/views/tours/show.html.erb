@@ -26,6 +26,8 @@
 <hr>
 
 <% if current_user == @tour.user %>
+	<p class="lead">Click below to edit your tour. Drag and drop to add and image. Don't forget to save.</p>
+	<hr>
 	<div class="editable">
 		<%= sanitize(@tour.body).html_safe %>
 	</div>
@@ -139,9 +141,11 @@ async defer></script>
 				            data-locale="auto"></script>
 				            <script>
 		        // Hide default stripe button
-		        document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
+		        $(document).on('turbolinks:load', function() {	
+			        document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
+			      });
 		    </script>
-				   <%= form.submit "Tip this guide $5", :class => "tip-button btn btn-warning" %>
+				   <%= form.submit "Tip this guide", :class => "tip-button btn btn-warning" %>
 				<% end %>
 			</div>
 		</div>

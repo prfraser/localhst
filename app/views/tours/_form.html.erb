@@ -11,14 +11,20 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= form.label :title, :class => "col-sm-1 control-label" %>
-    <div class="col-sm-8">
-      <%= form.text_field :title, id: :tour_title, :class => "form-control" %>
-    </div>
-  </div>  
+  <p class="lead col-sm-offset-1">Fill out these required fields to get started with your tour.</p>
+  <hr>
 
   <div class="form-group">
+    <p class="col-sm-offset-1">1. Give your tour a title.</p>
+    <%= form.label :title, "Tour title", :class => "col-sm-1 control-label" %>
+    <div class="col-sm-8">
+      <%= form.text_field :title, id: :tour_title, :class => "form-control", placeholder: "e.g. Walking tour of Brisbane." %>
+    </div>
+  </div>  
+  <hr>
+
+  <div class="form-group">
+    <p class="col-sm-offset-1">2. Choose a banner image and give a time estimate.</p>
     <%= form.label :title_img,'Banner Image', :class => "col-sm-1 control-label" %>
     <div class="col-sm-4">
       <%= form.file_field :title_img, class: 'form-control-file btn btn-default'  %>
@@ -26,28 +32,35 @@
 
     <%= form.label :est_time, 'Approx hours', :class => "col-sm-1 control-label" %>
     <div class="col-sm-3">
-      <%= form.text_field :est_time, id: :tour_title, :class => "form-control" %>
+      <%= form.text_field :est_time, id: :tour_title, :class => "form-control", placeholder: "e.g. 3" %>
     </div>
   </div>
+  <hr>
 
   <div class="form-group">
+    <p class="col-sm-offset-1">3. Give the city location of your tour.</p>
     <%= form.label :city, :class => "col-sm-1 control-label" %>
     <div class="col-sm-8">
-      <%= form.text_field :city, id: :tour_city, :class => "form-control" %>
+      <%= form.text_field :city, id: :tour_city, :class => "form-control", placeholder: "e.g. Brisbane" %>
     </div>
   </div>
+  <hr>
 
   <div class="form-group">
-    <%= form.label :tag_list, 'Tags (separated by commas)', :class => "col-sm-1 control-label" %><br/>
+    <p class="col-sm-offset-1">4. Give some tags for your tour.</p>
+    <%= form.label :tag_list, 'Tags', :class => "col-sm-1 control-label" %><br/>
     <div class="col-sm-8">
-      <%= form.text_field(:tag_list, value: @tour.tag_list.join(","), :class => "form-control" ) %>
+      <%= form.text_field(:tag_list, value: @tour.tag_list.join(","), :class => "form-control", placeholder: "e.g. Walking, Food" ) %>
+      <small id="emailHelp" class="form-text text-muted">Seperate your tags with commas</small>
     </div>
   </div>
+  <hr>
 
   <div class="form-group">
+    <p class="col-sm-offset-1">5. Give a brief summary of your tour.</p>
     <%= form.label :summary, :class => "col-sm-1 control-label" %>
     <div class="col-sm-8">
-      <%= form.text_field :summary, id: :tour_summary, :class => "form-control" %>
+      <%= form.text_field :summary, id: :tour_summary, :class => "form-control", placeholder: "e.g. Cool walking tour of Brisbane. Stopping at some cool bars." %>
     </div>
   </div>
   <hr>
