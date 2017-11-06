@@ -130,6 +130,19 @@ async defer></script>
 				<p> <%= @tour.user.tours.count %> tours </p>
 			</div>
 		</div>
+		<%= form_with(url: '/tip', local: true) do |form| %>
+		  <%= hidden_field_tag(:tour_id, @tour.id) %>
+		  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+		            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+		            data-description="Tip for your tourguide."
+		            data-amount="500"
+		            data-locale="auto"></script>
+		            <script>
+        // Hide default stripe button
+        document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
+    </script>
+		   <%= form.submit "Tip this guide $5", :class => "tip-button btn btn-warning" %>
+		<% end %>
 	</div>
 	<div class="col-sm-6">
 		<p> Details: <%= rating_for @tour, 'details', star_path: '/images/ratyrate', star: 5, enable_half: true, half_show: true %> </p>
