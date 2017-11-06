@@ -13,7 +13,7 @@
       <p>Connected with Stripe!</p>
       <p>Stripe User ID: <strong><%= @stripe_user_id %></strong></p>
     <% end %>
-    <%= link_to "Your Mailbox", conversations_path, :class => "btn btn-info" %>
+    <%= link_to "Your Mailbox", conversations_path, :class => "btn btn-info fontfix" %>
 <% end %>
 <hr>
 <h4>Tours by <%= @user.first_name %> <%= @user.last_name %>:</h4>
@@ -38,7 +38,7 @@
                   <p class="tour-index-panel-tag-title">Tags:</p>
                   <br>
                   <% tour.tag_list.each do |tag| %>
-                    <span class="label label-primary tour-index-panel-tag"><%= link_to tag, tag_path(tag) %></span>
+                    <span class="label label-primary tour-index-panel-tag fontfix"><%= link_to tag, tag_path(tag) %></span>
                   <% end %>
                 </div>
                 <br>

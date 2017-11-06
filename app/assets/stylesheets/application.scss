@@ -31,7 +31,7 @@
 // And finally bootswatch style itself
 @import "bootswatch/lumen/bootswatch";
 
-// Whatever application styles you have go last
+// navbar partial
 
 .nav-image-anchor {
   padding: 0px; /* firefox bug fix */
@@ -78,38 +78,6 @@ li {
   color: white;
 }
 */
-// Tour update/save button
-.busy {
-  background-color: #2C3F50 !important;
-}
-
-// Tour Form
-#error_explanation > ul > li {
-  color: black;
-}
-
-// Tour Show
-.fontfix {
-  color: white !important;
-}
-
-.fontfix > a:visited {
-  color: white;
-}
-
-.fontfix > a {
-  color: white;
-  text-decoration: none !important;
-}
-
-.profile-info > a {
-  color: black !important;
-}
-
-// Tour Index
-.tag-row {
-  padding-left: 15px;
-}
 
 
 // Google maps

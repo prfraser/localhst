@@ -7,11 +7,11 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><%= link_to 'Tours', tours_path %></li>
+        <li><%= link_to 'All Tours', tours_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-        <li><%= link_to 'New Tour', new_tour_path %></li> 
+        <li><%= link_to 'Create a Tour', new_tour_path %></li> 
         <li></li>
           <li class="dropdown">
 	          <a href="#" class="dropdown-toggle circle-wrapper" data-toggle="dropdown" role="button" aria-expanded="false"><%= image_tag current_user.avatar.url(:thumb), :class => "circle" %><span class="caret"></span></a>
