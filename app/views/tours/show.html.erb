@@ -3,7 +3,7 @@
 	  <%= @tour.title %>
 	</h1>
 	<% @tour.tag_list.each do |tag| %>
-		<span class="label label-info"><%= link_to tag, tag_path(tag) %></span>
+		<span class="label label-info fontfix"><%= link_to tag, tag_path(tag) %></span>
 	<% end %>
 	<br>
 </div>
@@ -112,9 +112,10 @@ async defer></script>
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
 
 <hr>
-<%= link_to 'Back', tours_path, :class => "btn btn-primary"  %>
+
+<%= link_to 'Back', tours_path, :class => "btn btn-primary fontfix"  %>
 <% if current_user == @tour.user %>
-  | <%= link_to 'Destroy', @tour, :class => "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %> | <%= link_to 'Edit', edit_tour_path(@tour), :class => "btn btn-warning" %>
+  | <%= link_to 'Destroy', @tour, :class => "btn btn-danger fontfix", method: :delete, data: { confirm: 'Are you sure?' } %> | <%= link_to 'Edit', edit_tour_path(@tour), :class => "btn btn-warning fontfix" %>
 <% end %>
 
 <hr>
@@ -155,7 +156,7 @@ async defer></script>
 <%= render 'reviews/form' %>
 
 <div class="list-group col-sm-10" >
-	<div class="list-group-item active"><h3>Reviews:</h3></div>
+	<div class="list-group-item active"><h3 class="fontfix">Reviews:</h3></div>
 		<% @tour.reviews.each do |review| %>
 		    <a class="list-group-item">
 		    	<%= review.content %>  <strong> | <%= review.user.try(:email)%></strong> 

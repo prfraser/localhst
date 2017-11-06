@@ -20,7 +20,7 @@
 @import "bootstrap-sprockets";
 
 // Import cerulean variables
-@import "bootswatch/superhero/variables";
+@import "bootswatch/lumen/variables";
 
 // Then bootstrap itself
 @import "bootstrap";
@@ -29,7 +29,7 @@
 /*body { padding-top: 60px; }*/
 
 // And finally bootswatch style itself
-@import "bootswatch/superhero/bootswatch";
+@import "bootswatch/lumen/bootswatch";
 
 // Whatever application styles you have go last
 
@@ -64,7 +64,7 @@
 }
 
 
-// Wysiwyg fix
+/*// Wysiwyg fix
 a:visited {
   color: white;
 }
@@ -77,7 +77,7 @@ a {
 li {
   color: white;
 }
-
+*/
 // Tour update/save button
 .busy {
   background-color: #2C3F50 !important;
@@ -86,6 +86,20 @@ li {
 // Tour Form
 #error_explanation > ul > li {
   color: black;
+}
+
+// Tour Show
+.fontfix {
+  color: white;
+}
+
+a:visited, .fontfix {
+  color: white;
+}
+
+a, .fontfix {
+  color: white;
+  text-decoration: none !important;
 }
 
 // Tour Index

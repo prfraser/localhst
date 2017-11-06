@@ -76,15 +76,8 @@ $(document).on('turbolinks:load', function() {
         	'outdent',
           'addy'
         	]
-        },
-        extensions: {
-            'addy': new MediumButton({
-              label:'Address', // Button Label: HTML and Font-Awesome is possible
-              start:'<div class="addy">', // Beginning of the selection
-              end:'</div>' // End of the selection
-            })
-          }
-        });
+        }
+      });
   $("#save").on('click', save);
 
 })
