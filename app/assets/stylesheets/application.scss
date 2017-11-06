@@ -90,16 +90,20 @@ li {
 
 // Tour Show
 .fontfix {
+  color: white !important;
+}
+
+.fontfix > a:visited {
   color: white;
 }
 
-a:visited, .fontfix {
-  color: white;
-}
-
-a, .fontfix {
+.fontfix > a {
   color: white;
   text-decoration: none !important;
+}
+
+.profile-info > a {
+  color: black !important;
 }
 
 // Tour Index

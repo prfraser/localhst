@@ -5,7 +5,7 @@
 
   <div class="row tag-row">
     <strong class="lead">Popular tags:</strong>
-    <span class="label label-info tour-index-panel-tag"><%= link_to "All Tours", tours_path %></span>
+    <span class="label label-info tour-index-panel-tag fontfix"><%= link_to "All Tours", tours_path %></span>
     <% ActsAsTaggableOn::Tag.most_used(10).each do |tag| %>
       <span class="label label-warning tour-index-panel-tag fontfix"><%= link_to tag, tag_path(tag.name) %></span>
     <% end %>
@@ -48,7 +48,7 @@
                     <p class="tour-index-panel-tag-title">Tags:</p>
                     <br>
                     <% tour.tag_list.each do |tag| %>
-                      <span class="label label-primary tour-index-panel-tag"><%= link_to tag, tag_path(tag) %></span>
+                      <span class="label label-primary tour-index-panel-tag fontfix"><%= link_to tag, tag_path(tag) %></span>
                     <% end %>
                   </div>
                   <br> 
