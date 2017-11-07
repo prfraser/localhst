@@ -132,7 +132,7 @@ async defer></script>
 				</div>
 				<p><%= link_to "#{@tour.user.first_name} #{@tour.user.last_name}", profile_path(@tour.user)%></p>
 				<p> <%= @tour.user.tours.count %> tours </p>
-				<% if @stripe_user_id.nil? %>
+				<% if @tour.user.stripe_user_id.nil? %>
 					<p>This user is currently not accepting tips.</p>
 				<% else %>
 					<%= form_with(url: '/tip', local: true) do |form| %>
