@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'mailgun-ruby', '~>1.1.6'
 gem 'activeadmin'
 gem 'httparty'
 gem 'stripe'
