@@ -8,7 +8,7 @@
   4.Workflow
   
   5.Userstories
-  
+ 
   6.ERD
   
   7. Tools
@@ -21,21 +21,21 @@ Localhst is a website for tourists or just people looking for an adventure. User
 Website: https://localhst.herokuapp.com/
 
 # 2. Requirements
-Create your application using Ruby on Rails.
-Demonstrate knowledge of Rails conventions.
-Use postgresql database in development.
-Use an API (eg. Omniauth, Geocoding, Maps, other..).
-Use appropriate gems.
-Use environmental variables to protect API keys etc. (dotenv)
-Implement a payment system for your product. (e.g. Stripe)
-Your app must send transactional emails (eg. using Mailgun).
-Your app should have an internal user messaging system.
-Your app will have some type of searching, sorting and/or filtering capability.
-Your app will have some type of file uploading capability (eg. images).
-Your app will have authentication (eg. Devise, must have full functionality in place).
-Your app will have authorisation (users have restrictions on what they can see and edit).
-Your app will have an admin dashboard for the admin user to administrate the site.
-Document your application with a README that explains how to setup, configure and use your application.
+*Create your application using Ruby on Rails.
+*Demonstrate knowledge of Rails conventions.
+*Use postgresql database in development.
+*Use an API (eg. Omniauth, Geocoding, Maps, other..).
+*Use appropriate gems.
+*Use environmental variables to protect API keys etc. (dotenv)
+*Implement a payment system for your product. (e.g. Stripe)
+*Your app must send transactional emails (eg. using Mailgun).
+*Your app should have an internal user messaging system.
+*Your app will have some type of searching, sorting and/or filtering capability.
+*Your app will have some type of file uploading capability (eg. images).
+*Your app will have authentication (eg. Devise, must have full functionality in place).
+*Your app will have authorisation (users have restrictions on what they can see and edit).
+*Your app will have an admin dashboard for the admin user to administrate the site.
+*Document your application with a README that explains how to setup, configure and use your application.
 # 3. Wireframing
 ![picture alt](https://preview.ibb.co/fzcgNb/Screen_Shot_2017_11_07_at_12_21_03_pm.png "Wireframe")
 
