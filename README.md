@@ -56,7 +56,7 @@ https://ibb.co/dhRrNb
 3. Draw.io
 4. Rails-erd
 5. Bootstrap
-6. Gems: rails-erd', 'mailgun-ruby', 'activeadmin', 'httparty', 'stripe', 'medium-editor-rails', 'dotenv-rails', 'geocoder', 'devise', 'bootswatch-rails', 'bootstrap-sass', 'devise-bootstrap-views', 'jquery-rails', 'paperclip', 'nested_scaffold', 'ratyrate', 'acts-as-taggable-on', 'aws-sdk'
+6. Gems: 'rails-erd', 'mailgun-ruby', 'activeadmin', 'httparty', 'stripe', 'medium-editor-rails', 'dotenv-rails', 'geocoder', 'devise', 'bootswatch-rails', 'bootstrap-sass', 'devise-bootstrap-views', 'jquery-rails', 'paperclip', 'nested_scaffold', 'ratyrate', 'acts-as-taggable-on', 'aws-sdk'
 
 # 8. Installation
 1. Clone the repo
