@@ -56,10 +56,18 @@ https://ibb.co/dhRrNb
 3. Draw.io
 4. Rails-erd
 5. Bootstrap
+6. Gems: rails-erd', 'mailgun-ruby', 'activeadmin', 'httparty', 'stripe', 'medium-editor-rails', 'dotenv-rails', 'geocoder', 'devise', 'bootswatch-rails', 'bootstrap-sass', 'devise-bootstrap-views', 'jquery-rails', 'paperclip', 'nested_scaffold', 'ratyrate', 'acts-as-taggable-on', 'aws-sdk'
 
 # 8. Installation
 1. Clone the repo
 2. run `bundle install` in terminal
 3. run `rails db:migrate` in terminal
+4. create a file called .env in the root of the directory. Populate the api keys with your own keys.
+  GMAP_API=XXXX
+  STRIPE_CLIENT_ID=XXXX
+  STRIPE_CLIENT_SECRET=XXXX
+  STRIPE_PUBLISHABLE_KEY=XXXX
+  MAILGUN_API_KEY=XXXX
+  MAILGUN_DOMAIN=XXXX
 4. start server with `rails s`
 5. navigate to https://localhost:3000 in your browser
