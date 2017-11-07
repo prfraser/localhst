@@ -12,27 +12,7 @@
   6.ERD
 
 # Summary 
+Localhst is a website for tourists or just people looking for an adventure. Users are able to make a tour/guide of any location and any activity and accept tips for their hard work, for example, a cycling street art tour of Melbourne or a walking food tour of Brisbane. Users are also able to search for tours of any location and filter for certain activities or modes of transport. 
 
+Website: https://localhst.herokuapp.com/
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
