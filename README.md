@@ -43,3 +43,4 @@ https://trello.com/b/57XBTkKf/localhst
 
 # 6. ERD
 ![picture alt](https://preview.ibb.co/bQGEaw/erd.jpg "ERD")
+https://ibb.co/dhRrNb
