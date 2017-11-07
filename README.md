@@ -64,10 +64,16 @@ https://ibb.co/dhRrNb
 3. run `rails db:migrate` in terminal
 4. create a file called .env in the root of the directory. Populate the api keys with your own keys.
   GMAP_API=XXXX
+  
   STRIPE_CLIENT_ID=XXXX
+  
   STRIPE_CLIENT_SECRET=XXXX
+  
   STRIPE_PUBLISHABLE_KEY=XXXX
+  
   MAILGUN_API_KEY=XXXX
+  
   MAILGUN_DOMAIN=XXXX
+  
 4. start server with `rails s`
 5. navigate to https://localhost:3000 in your browser
