@@ -10,6 +10,10 @@
   5.Userstories
   
   6.ERD
+  
+  7. Tools
+  
+  8. Installation
 
 # 1. Summary 
 Localhst is a website for tourists or just people looking for an adventure. Users are able to make a tour/guide of any location and any activity and accept tips for their hard work, for example, a cycling street art tour of Melbourne or a walking food tour of Brisbane. Users are also able to search for tours of any location and filter for certain activities or modes of transport. 
@@ -45,3 +49,17 @@ https://trello.com/b/57XBTkKf/localhst
 ![picture alt](https://preview.ibb.co/bQGEaw/erd.jpg "ERD")
 
 https://ibb.co/dhRrNb
+
+# 7. Tools
+1. Trello
+2. Balsamiq
+3. Draw.io
+4. Rails-erd
+5. Bootstrap
+
+# 8. Installation
+1. Clone the repo
+2. run `bundle install` in terminal
+3. run `rails db:migrate` in terminal
+4. start server with `rails s`
+5. navigate to https://localhost:3000 in your browser
