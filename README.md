@@ -33,7 +33,13 @@ Your app will have authorisation (users have restrictions on what they can see a
 Your app will have an admin dashboard for the admin user to administrate the site.
 Document your application with a README that explains how to setup, configure and use your application.
 # 3. Wireframing
-![picture alt](https://preview.ibb.co/fzcgNb/Screen_Shot_2017_11_07_at_12_21_03_pm.png "Workflow")
+![picture alt](https://preview.ibb.co/fzcgNb/Screen_Shot_2017_11_07_at_12_21_03_pm.png "Wireframe")
 
 # 4. Workflow 
 ![picture alt](https://preview.ibb.co/ixKvhb/Screen_Shot_2017_11_07_at_1_32_16_pm.png "Workflow")
+
+# 5. User Stories
+https://trello.com/b/57XBTkKf/localhst
+
+# 6. ERD
+![picture alt](https://preview.ibb.co/bQGEaw/erd.jpg "ERD")
