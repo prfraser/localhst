@@ -135,6 +135,7 @@ async defer></script>
 				<% if @tour.user.stripe_user_id.nil? %>
 					<p>This user is currently not accepting tips.</p>
 				<% else %>
+					<p>Tip this host:</p>
 					<%= form_with(url: '/tip', local: true) do |form| %>
 					  <%= hidden_field_tag(:tour_id, @tour.id) %>
 					  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -143,12 +144,7 @@ async defer></script>
 					            data-amount="500"
 					            data-locale="auto"></script>
 					            <script>
-			        // Hide default stripe button
-			        $(document).on('turbolinks:load', function() {	
-				        document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
-				      });
 			    </script>
-					   <%= form.submit "Tip this guide", :class => "tip-button btn btn-warning" %>
 					<% end %>
 				<% end %>
 			</div>
