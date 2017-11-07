@@ -34,4 +34,4 @@ Your app will have an admin dashboard for the admin user to administrate the sit
 Document your application with a README that explains how to setup, configure and use your application.
 
 # 3. Wireframing 
-![picture alt](http://www.brightlightpictures.com/assets/images/portfolio/thethaw_header.jpg "Title is optional")
+![picture alt](https://ibb.co/jETXTG "Workflow")
