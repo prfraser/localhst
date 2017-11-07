@@ -63,6 +63,7 @@ https://ibb.co/dhRrNb
 2. run `bundle install` in terminal
 3. run `rails db:migrate` in terminal
 4. create a file called .env in the root of the directory. Populate the api keys with your own keys.
+
   GMAP_API=XXXX
   
   STRIPE_CLIENT_ID=XXXX
