@@ -41,6 +41,7 @@ Website: https://localhst.herokuapp.com/
 *Your app will have an admin dashboard for the admin user to administrate the site.
 *Document your application with a README that explains how to setup, configure and use your application.
 # 3. Wireframing
+https://balsamiq.cloud/saqmz/p5lep
 ![picture alt](https://preview.ibb.co/fzcgNb/Screen_Shot_2017_11_07_at_12_21_03_pm.png "Wireframe")
 
 # 4. Workflow 
