@@ -1,7 +1,6 @@
 class CheckoutController < ApplicationController
   # post /checkout  
   def create
-    
     # Look up the tour so we can:
     # - Grab the owner's stripe ID to distribute funds
     @tour = Tour.find(params[:tour_id])
