@@ -7,13 +7,13 @@
 	<% end %>
 	<br>
 </div>
-
 <hr>
+
 <div class="title-img-wrapper">
   <%= image_tag @tour.title_img.url(:banner), :class => "title-img"  %>
 </div>
-
 <hr>
+
 <div class="row summary-wrapper">
 	<div class="col-sm-10">
 		<%= sanitize(@tour.summary).html_safe %>
@@ -48,9 +48,9 @@
 			<p>Existing markers:</p>
 			<hr>
 			<% @tour.markers.each do |marker| %>
-				<strong> Marker name: </strong><%= marker.name %>
+				<strong>Marker name: </strong><%= marker.name %>
 				<br>
-				<strong> Marker address: </strong><%= marker.address %>
+				<strong>Marker address: </strong><%= marker.address %>
 				<%= link_to 'Delete', tour_marker_path(@tour, marker), :class => "btn btn-danger btn-xs inline", method: :delete, data: { confirm: 'Are you sure?' } %>
 				<hr>
 			<% end %>
@@ -112,14 +112,12 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV.fetch('GMAP_API') %>&callback=initMap"
 async defer></script>
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-
 <hr>
 
 <%= link_to 'Back', tours_path, :class => "btn btn-primary fontfix"  %>
 <% if current_user == @tour.user %>
   | <%= link_to 'Destroy', @tour, :class => "btn btn-danger fontfix", method: :delete, data: { confirm: 'Are you sure?' } %> | <%= link_to 'Edit', edit_tour_path(@tour), :class => "btn btn-warning fontfix" %>
 <% end %>
-
 <hr>
 
 <div class="row">
@@ -153,7 +151,6 @@ async defer></script>
 		<p> Coolness: <%= rating_for @tour, 'coolness', star_path: '/images/ratyrate', star: 5, enable_half: true, half_show: true %> </p>
 	</div>
 </div>
-
 <hr>
 
 <%= render 'reviews/form' %>

@@ -2,6 +2,7 @@
 <h1> <%= @user.email %> </h1>
 <h4> <%= @user.first_name %> <%= @user.last_name %> </h4>
 <h4><%= @user.tours.count %> tours</h4>
+
 <% if current_user.id != @user.id %>
     <%= link_to "Message #{@user.first_name} #{@user.last_name}", conversations_path(sender_id: current_user.id, recipient_id: @user.id), :class => "btn btn-info btn-sm", method: 'post'%>
   <% else %>
@@ -16,37 +17,38 @@
     <%= link_to "Your Mailbox", conversations_path, :class => "btn btn-info fontfix" %>
 <% end %>
 <hr>
+
 <h4>Tours by <%= @user.first_name %> <%= @user.last_name %>:</h4>
 <% @tours.each do |tour| %>
-      <div class="row col-sm-12">
-        <div class="panel panel-default col-sm-12 tour-panel-wrapper-wrapper">
-          <div class="tour-panel-wrapper">
-            <%= link_to tour_path(tour) do %>
-              <div class="tour-panel-image-wrapper">
-                <%= image_tag tour.title_img.url(:medium) %> 
-              </div>
-            <% end %>
-            <div class="tour-panel-inside-wrapper">
-              <div class="tour-panel-block-1 col-sm-8">
-                <p>Location: <%= tour.city %></p>
-                <h2 class="tour-index-panel-heading"><%= tour.title %></h2>
-                <p><%= sanitize(tour.summary).html_safe %></p>
-                <p>Est time: <%= tour.est_time %> hours</p>
-              </div>
-              <div class="tour-panel-block-2 col-sm-4">
-                <div class="tour-index-panel-tag-wrapper">
-                  <p class="tour-index-panel-tag-title">Tags:</p>
-                  <br>
-                  <% tour.tag_list.each do |tag| %>
-                    <span class="label label-primary tour-index-panel-tag fontfix"><%= link_to tag, tag_path(tag) %></span>
-                  <% end %>
-                </div>
-                <br>
-                Details: <%= rating_for tour, 'details', star_path: '/images/ratyrate', star: 5, disabled: true, half_show: true %>
-                Coolness: <%= rating_for tour, 'coolness', star_path: '/images/ratyrate', star: 5, disabled: true, half_show: true %>
-              </div>
+  <div class="row col-sm-12">
+    <div class="panel panel-default col-sm-12 tour-panel-wrapper-wrapper">
+      <div class="tour-panel-wrapper">
+        <%= link_to tour_path(tour) do %>
+          <div class="tour-panel-image-wrapper">
+            <%= image_tag tour.title_img.url(:medium) %> 
+          </div>
+        <% end %>
+        <div class="tour-panel-inside-wrapper">
+          <div class="tour-panel-block-1 col-sm-8">
+            <p>Location: <%= tour.city %></p>
+            <h2 class="tour-index-panel-heading"><%= tour.title %></h2>
+            <p><%= sanitize(tour.summary).html_safe %></p>
+            <p>Est time: <%= tour.est_time %> hours</p>
+          </div>
+          <div class="tour-panel-block-2 col-sm-4">
+            <div class="tour-index-panel-tag-wrapper">
+              <p class="tour-index-panel-tag-title">Tags:</p>
+              <br>
+              <% tour.tag_list.each do |tag| %>
+                <span class="label label-primary tour-index-panel-tag fontfix"><%= link_to tag, tag_path(tag) %></span>
+              <% end %>
             </div>
+            <br>
+            Details: <%= rating_for tour, 'details', star_path: '/images/ratyrate', star: 5, disabled: true, half_show: true %>
+            Coolness: <%= rating_for tour, 'coolness', star_path: '/images/ratyrate', star: 5, disabled: true, half_show: true %>
           </div>
         </div>
       </div>
-  <% end %>
+    </div>
+  </div>
+<% end %>
