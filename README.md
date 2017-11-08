@@ -64,9 +64,13 @@ https://ibb.co/dhRrNb
 We were given 2 weeks to complete this project. The project had alot of requirements, and my idea involved using tools I had no prior experience with. With this in mind I gave myself generous time estimates for each task.
 
 2 to 3 days for: User stories / Wireframes / Workflow and ERD.
+
 2 to 3 days for: Basic CRUD functionality of Users / Tours / Comments and Reviews.
+
 2 Days for: Implementing tools I was familiar with: Bootstrap, Mailers, Tags, Paperclip, Ratings.
+
 4 Days for: Implementing tools I was not familiar with: Google Maps, Stripe Connect, Medium Editor, Active Admin
+
 1 Day to complete all the documentation involved.
 
 There were certain tasks that took less time that expected and others longer. All in all I finished all the major features with time to spare and spent the extra time working on bugs and docs.
