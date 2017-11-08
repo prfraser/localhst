@@ -11,9 +11,13 @@
  
   6.ERD
   
-  7.Tools
+  7.Project plan & Estimation
   
-  8.Installation
+  8.Tools
+  
+  9.Installation
+  
+  10.Bugs
 
 # 1. Summary 
 Problem:
@@ -40,6 +44,7 @@ Website: https://localhst.herokuapp.com/
 *Your app will have authorisation (users have restrictions on what they can see and edit).
 *Your app will have an admin dashboard for the admin user to administrate the site.
 *Document your application with a README that explains how to setup, configure and use your application.
+
 # 3. Wireframing
 https://balsamiq.cloud/saqmz/p5lep
 ![picture alt](https://preview.ibb.co/fzcgNb/Screen_Shot_2017_11_07_at_12_21_03_pm.png "Wireframe")
@@ -55,7 +60,18 @@ https://trello.com/b/57XBTkKf/localhst
 
 https://ibb.co/dhRrNb
 
-# 7. Tools
+# 7. Project plan & Estimation
+We were given 2 weeks to complete this project. The project had alot of requirements, and my idea involved using tools I had no prior experience with. With this in mind I gave myself generous time estimates for each task.
+
+2 to 3 days for: User stories / Wireframes / Workflow and ERD.
+2 to 3 days for: Basic CRUD functionality of Users / Tours / Comments and Reviews.
+2 Days for: Implementing tools I was familiar with: Bootstrap, Mailers, Tags, Paperclip, Ratings.
+4 Days for: Implementing tools I was not familiar with: Google Maps, Stripe Connect, Medium Editor, Active Admin
+1 Day to complete all the documentation involved.
+
+There were certain tasks that took less time that expected and others longer. All in all I finished all the major features with time to spare and spent the extra time working on bugs and docs.
+
+# 8. Tools
 1. Trello
 2. Balsamiq
 3. Draw.io
@@ -63,7 +79,7 @@ https://ibb.co/dhRrNb
 5. Bootstrap
 6. Gems: 'rails-erd', 'mailgun-ruby', 'activeadmin', 'httparty', 'stripe', 'medium-editor-rails', 'dotenv-rails', 'geocoder', 'devise', 'bootswatch-rails', 'bootstrap-sass', 'devise-bootstrap-views', 'jquery-rails', 'paperclip', 'nested_scaffold', 'ratyrate', 'acts-as-taggable-on', 'aws-sdk'
 
-# 8. Installation
+# 9. Installation
 1. Clone the repo
 2. run `bundle install` in terminal
 3. run `rails db:migrate` in terminal
@@ -83,3 +99,7 @@ https://ibb.co/dhRrNb
   
 4. start server with `rails s`
 5. navigate to https://localhost:3000 in your browser
+
+# 10. Bugs
+Current known bugs are:
+Adding markers with invalid addresses causes errors with google maps.
