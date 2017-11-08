@@ -7,7 +7,7 @@
   
   4.Workflow
   
-  5.Userstories
+  5.User Stories
  
   6.ERD
   
@@ -16,6 +16,10 @@
   8.Installation
 
 # 1. Summary 
+Problem:
+People need a place to find information about things to do in different places all over the world. Currently there is no place to get a information specific to the location and activity you are interested in all linked together in one document. Services such as trip advisor do provide specific information about locations, however they do not link together multiple locations from different activities, nor do they provide detailed local knowledge and information to make for a personal experience. 
+
+Solution:
 Localhst is a website for tourists or just people looking for an adventure. Users are able to make a tour/guide of any location and any activity and accept tips for their hard work, for example, a cycling street art tour of Melbourne or a walking food tour of Brisbane. Users are also able to search for tours of any location and filter for certain activities or modes of transport. 
 
 Website: https://localhst.herokuapp.com/
