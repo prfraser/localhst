@@ -66,6 +66,8 @@ $(document).on('turbolinks:load', function() {
 	var editor = new MediumEditor('.editable', {
     toolbar: {
         buttons: [
+          'h1',
+          'h3',
         	'bold', 
         	'italic', 
         	'underline', 
@@ -73,8 +75,7 @@ $(document).on('turbolinks:load', function() {
         	'quote', 
         	'unorderedlist', 
         	'indent', 
-        	'outdent',
-          'addy'
+        	'outdent'
         	]
         }
       });
