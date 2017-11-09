@@ -11,11 +11,14 @@ class ReviewsController < ApplicationController
   # POST tours/1/reviews
   def create
     @review = @tour.reviews.build(review_params)
-    @review.user_id = current_user.id
+    if current_user
+      @review.user_id = current_user.id
+    end
+
     if @review.save
       redirect_to(tour_path(@tour), notice: 'Review was successfully created.')
     else
-      redirect_to(tour_path(@tour), alert: 'Error occured in creating review. Review cannot be blank.')
+      redirect_to(tour_path(@tour), alert: 'Error occured in creating review.')
     end
   end
 
