@@ -133,14 +133,18 @@ async defer></script>
 				<% if @tour.user.stripe_user_id.nil? %>
 					<p>This user is currently not accepting tips.</p>
 				<% else %>
-					<p>Tip this host:</p>
-					<%= form_with(url: '/tip', local: true) do |form| %>
-					  <%= hidden_field_tag(:tour_id, @tour.id) %>
-					  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-					            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-					            data-description="Tip for your tourguide."
-					            data-amount="500"
-					            data-locale="auto"></script>
+					<% if @tour.user.id == current_user.id %>
+						<p>Your Profile</p>
+					<% else %>
+						<p>Tip this host $5:</p>
+						<%= form_with(url: '/tip', local: true) do |form| %>
+						  <%= hidden_field_tag(:tour_id, @tour.id) %>
+						  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+						            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+						            data-description="Tip for your tourguide."
+						            data-amount="500"
+						            data-locale="auto"></script>
+            <% end %>
 					<% end %>
 				<% end %>
 			</div>
